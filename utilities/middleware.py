@@ -6,17 +6,10 @@ import requests
 
 load_dotenv()
 
-WHATSAPP_BUSINESS_PHONE_NUMBER_ID = os.getenv("WHATSAPP_BUSINESS_PHONE_NUMBER_ID")
-WHATSAPP_BUSINESS_ACCESS_TOKEN = os.getenv("WHATSAPP_BUSINESS_ACCESS_TOKEN")
-WHATSAPP_BUSINESS_ACCOUNT_ID = os.getenv("WHATSAPP_BUSINESS_ACCOUNT_ID")
 
-if not any(
-    WHATSAPP_BUSINESS_ACCESS_TOKEN,
-    WHATSAPP_BUSINESS_ACCOUNT_ID,
-    WHATSAPP_BUSINESS_PHONE_NUMBER_ID,
-):
-    raise ValueError("Please provide all required environment variables")
-
+WHATSAPP_BUSINESS_PHONE_NUMBER_ID = os.getenv("WHATSAPP_BUSINESS_PHONE_NUMBER_ID", "")
+WHATSAPP_BUSINESS_ACCESS_TOKEN = os.getenv("WHATSAPP_BUSINESS_ACCESS_TOKEN", "")
+WHATSAPP_BUSINESS_ACCOUNT_ID = os.getenv("WHATSAPP_BUSINESS_ACCOUNT_ID", "")
 
 class WhatsappFlowsMiddleware:
     auth_header = {"Authorization": f"Bearer {WHATSAPP_BUSINESS_ACCESS_TOKEN}"}
@@ -29,7 +22,7 @@ class WhatsappFlowsMiddleware:
     @classmethod
     def create_flow(cls, flow_name: str):
         flow_base_url = f"{cls.base_url}/{WHATSAPP_BUSINESS_ACCOUNT_ID}/flows"
-        flow_creation_payload = {"name": flow_name, "categories": '["SURVEY"]'}
+        flow_creation_payload = {"name": flow_name, "categories": '["OTHER"]'}
         flow_create_response = requests.post(
             flow_base_url, headers=cls.auth_header, json=flow_creation_payload
         )

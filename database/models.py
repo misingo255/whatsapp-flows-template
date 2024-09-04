@@ -13,7 +13,7 @@ import os
 # INITIALIZE THE DATABASE
 SQLITE_FILENAME = "database.db"
 sqlite_url = f"sqlite:///{SQLITE_FILENAME}"
-database_url = os.getenv("DATABASE_URL", None)
+database_url = os.getenv("DATABASE_URL", "")
 if not database_url:
     database_url = sqlite_url
 else:
