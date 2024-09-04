@@ -33,6 +33,11 @@ async def wehbook_verification(request: Request):
 @webhook_router.post("/webhook")
 async def webhook_processing(request: Request, tasks: BackgroundTasks):
     data = await request.json()
+    if not data:
+        return JSONResponse(
+            content="NO DATA OR REQUEST RECEIVED",
+            status_code=status.HTTP_400_BAD_REQUEST,
+        )
     messages = data["entry"][0]["changes"][0]["value"].get("messages")
     if messages:
         text = messages[0].get("text")
