@@ -73,6 +73,7 @@ class FlowData(SQLModel, table=True):
         with Session(engine) as session:
             data = session.exec(select(cls)).first()
             return data
-        
+
+
 # Create the tables
 SQLModel.metadata.create_all(engine)
