@@ -10,8 +10,6 @@ load_dotenv()
 
 WHATSAPP_BUSINESS_VERIFY_TOKEN = os.getenv("WHATSAPP_BUSINESS_VERIFY_TOKEN", "")
 
-if not WHATSAPP_BUSINESS_VERIFY_TOKEN:
-    raise ValueError("Please provide all required environment variables")
 
 webhook_router = APIRouter()
 
