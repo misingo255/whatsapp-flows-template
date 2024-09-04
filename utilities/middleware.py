@@ -18,7 +18,7 @@ class WhatsappFlowsMiddleware:
         "Content-Type": "application/json",
         "Authorization": f"Bearer {WHATSAPP_BUSINESS_ACCESS_TOKEN}",
     }
-    base_url = "https://graph.facebook.com/v20.0"
+    base_url = "https://graph.facebook.com/v18.0"
 
     @classmethod
     def create_flow(cls, flow_name: str):
@@ -31,23 +31,28 @@ class WhatsappFlowsMiddleware:
         return created_flow_id
 
     @classmethod
-    def upload_flow_json(cls, flow_id: str, file: str):
+    def upload_flow_json(cls, flow_id: str, file):
         graph_assets_url = f"{cls.base_url}/{flow_id}/assets"
-        flow_asset_payload = {"name": file, "asset_type": "FLOW_JSON"}
-        files = {"file": (file, open(file, "rb"), "application/json")}
+        files = {
+            "file": ("flow.json", open(file, "rb"), "application/json"),
+        }
+
+        data = {"name": "flow.json", "asset_type": "FLOW_JSON"}
+
         response = requests.post(
-            graph_assets_url,
-            headers=cls.auth_header,
-            data=flow_asset_payload,
-            files=files,
+            graph_assets_url, headers=cls.auth_header, files=files, data=data
         )
-        return response
+        if response.status_code == 200:
+            return response.json()
+        return response.text
 
     @classmethod
     def publish_flow(cls, flow_id: str):
         flow_publish_url = f"{cls.base_url}/{flow_id}/publish"
         response = requests.post(flow_publish_url, headers=cls.auth_header)
-        return response
+        if response.status_code == 200:
+            return response.json()
+        return response.text
 
     @classmethod
     def send_published_flow(cls, flow_id: str, recipient_phone_number: str):
@@ -56,7 +61,7 @@ class WhatsappFlowsMiddleware:
             "type": "flow",
             "header": {"type": "text", "text": "MSAIDIZI WA KUKATA TIKETI YA BOTI"},
             "body": {
-                "text": "Habari, Karibu ZAN FAST FERRIES. Tafadhali jaza fomu hii ili kupata tiketi ya boti.",
+                "text": "Habari, Karibu AZAM MARINES FERRIES. Tafadhali jaza fomu hii ili kupata tiketi ya boti.",
             },
             "footer": {
                 "text": "Bonyeza, KATA TIKETI YA BOTI ili kuendea hatua inayofuata"
@@ -86,7 +91,9 @@ class WhatsappFlowsMiddleware:
         response = requests.post(
             messaging_url, headers=cls.messaging_headers, json=payload
         )
-        return response
+        if response.status_code == 200:
+            return response.json()
+        return response.text
 
     @classmethod
     def send_unpublished_flow(cls, flow_id: str, recipient_phone_number: str):
@@ -95,7 +102,7 @@ class WhatsappFlowsMiddleware:
             "type": "flow",
             "header": {"type": "text", "text": "MSAIDIZI WA KUKATA TIKETI YA BOTI"},
             "body": {
-                "text": "Habari, Karibu ZAN FAST FERRIES. Tafadhali jaza fomu hii ili kupata tiketi ya boti.",
+                "text": "Habari, Karibu AZAM MARINES FERRIES. Tafadhali jaza fomu hii ili kupata tiketi ya boti.",
             },
             "footer": {
                 "text": "Bonyeza, KATA TIKETI YA BOTI ili kuendea hatua inayofuata"
@@ -126,7 +133,9 @@ class WhatsappFlowsMiddleware:
         response = requests.post(
             messaging_url, headers=cls.messaging_headers, json=payload
         )
-        return response
+        if response.status_code == 200:
+            return response.json()
+        return response.text
 
     @classmethod
     def send_message(cls, message: str, phone_number: str):
@@ -140,7 +149,9 @@ class WhatsappFlowsMiddleware:
         response = requests.post(
             messaging_url, headers=cls.messaging_headers, json=payload
         )
-        return response
+        if response.status_code == 200:
+            return response.json()
+        return response.text
 
     @classmethod
     def flow_reply_processor(cls, data):

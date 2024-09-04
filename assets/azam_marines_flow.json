@@ -1,0 +1,247 @@
+{
+    "version": "4.0",
+    "screens": [{
+        "id": "BINAFSI",
+        "title": "Binafsi",
+        "data": {},
+        "layout": {
+            "type": "SingleColumnLayout",
+            "children": [{
+                "type": "Form",
+                "name": "flow_path",
+                "children": [{
+                    "type": "TextSubheading",
+                    "text": "Tafadhari ingiza taarifa zako binafsi:-"
+                }, {
+                    "type": "TextInput",
+                    "label": "Jina la kwanza",
+                    "name": "jina_la_kwanza",
+                    "required": true,
+                    "input-type": "text"
+                }, {
+                    "type": "TextInput",
+                    "label": "Jina la kati",
+                    "name": "jina_la_kati",
+                    "required": true,
+                    "input-type": "text"
+                }, {
+                    "type": "TextInput",
+                    "label": "Jina la mwisho",
+                    "name": "jina_la_mwisho",
+                    "required": true,
+                    "input-type": "text"
+                }, {
+                    "type": "Dropdown",
+                    "label": "Jinsia",
+                    "required": true,
+                    "name": "jinsia",
+                    "data-source": [{
+                        "id": "ME",
+                        "title": "Mwanaume (ME)"
+                    }, {
+                        "id": "KE",
+                        "title": "Mwanamke (KE)"
+                    }]
+                }, {
+                    "type": "Footer",
+                    "label": "Endelea",
+                    "on-click-action": {
+                        "name": "navigate",
+                        "next": {
+                            "type": "screen",
+                            "name": "MAWASILIANO"
+                        },
+                        "payload": {}
+                    }
+                }]
+            }]
+        }
+    }, {
+        "id": "MAWASILIANO",
+        "title": "Mawasiliano na Makazi",
+        "data": {},
+        "layout": {
+            "type": "SingleColumnLayout",
+            "children": [{
+                "type": "Form",
+                "name": "flow_path",
+                "children": [{
+                    "type": "TextSubheading",
+                    "text": "Tafadhari andika taarifa zako za mawasiliano na makazi:-"
+                }, {
+                    "type": "TextInput",
+                    "label": "Namba ya simu",
+                    "name": "namba_ya_simu",
+                    "required": true,
+                    "input-type": "text"
+                }, {
+                    "type": "Dropdown",
+                    "label": "Uraia",
+                    "required": true,
+                    "name": "uraia",
+                    "data-source": [{
+                        "id": "mtanzania",
+                        "title": "Mtanzania"
+                    }, {
+                        "id": "mgeni",
+                        "title": "Mgeni"
+                    }]
+                }, {
+                    "type": "TextInput",
+                    "label": "Nchi",
+                    "name": "nchi",
+                    "required": true,
+                    "input-type": "text"
+                }, {
+                    "type": "TextInput",
+                    "label": "Mkoa",
+                    "name": "mkoa",
+                    "required": true,
+                    "input-type": "text"
+                }, {
+                    "type": "Footer",
+                    "label": "Done",
+                    "on-click-action": {
+                        "name": "navigate",
+                        "next": {
+                            "type": "screen",
+                            "name": "USAFIRI"
+                        },
+                        "payload": {}
+                    }
+                }]
+            }]
+        }
+    }, {
+        "id": "USAFIRI",
+        "title": "Usafiri",
+        "data": {},
+        "layout": {
+            "type": "SingleColumnLayout",
+            "children": [{
+                "type": "Form",
+                "name": "flow_path",
+                "children": [{
+                    "type": "TextSubheading",
+                    "text": "Tafadhari chagua taarifa zako za usafiri:-"
+                }, {
+                    "type": "Dropdown",
+                    "label": "Kutoka",
+                    "required": true,
+                    "name": "kutoka",
+                    "data-source": [{
+                        "id": "DAR",
+                        "title": "Dar es salaam (DAR)"
+                    }, {
+                        "id": "MKO",
+                        "title": "Mkoani (MKO)"
+                    }, {
+                        "id": "TAN",
+                        "title": "Tanga (TAN)"
+                    }, {
+                        "id": "WET",
+                        "title": "Wete (WET)"
+                    }, {
+                        "id": "ZNZ",
+                        "title": "Zanzibar (ZNZ)"
+                    }]
+                }, {
+                    "type": "Dropdown",
+                    "label": "Kwenda",
+                    "required": true,
+                    "name": "kwenda",
+                    "data-source": [{
+                        "id": "DAR",
+                        "title": "Dar es salaam (DAR)"
+                    }, {
+                        "id": "MKO",
+                        "title": "Mkoani (MKO)"
+                    }, {
+                        "id": "TAN",
+                        "title": "Tanga (TAN)"
+                    }, {
+                        "id": "WET",
+                        "title": "Wete (WET)"
+                    }, {
+                        "id": "ZNZ",
+                        "title": "Zanzibar (ZNZ)"
+                    }]
+                }, {
+                    "type": "DatePicker",
+                    "label": "Tarehe ya safari",
+                    "required": true,
+                    "name": "tarehe_ya_safari"
+                }, {
+                    "type": "TextInput",
+                    "label": "Idadi ya wasafiri",
+                    "name": "idadi_ya_wasafiri",
+                    "required": true,
+                    "input-type": "number"
+                }, {
+                    "type": "Footer",
+                    "label": "Endelea",
+                    "on-click-action": {
+                        "name": "navigate",
+                        "next": {
+                            "type": "screen",
+                            "name": "BOTI"
+                        },
+                        "payload": {}
+                    }
+                }]
+            }]
+        }
+    }, {
+        "id": "BOTI",
+        "title": "Boti",
+        "data": {},
+        "terminal": true,
+        "layout": {
+            "type": "SingleColumnLayout",
+            "children": [{
+                "type": "Form",
+                "name": "flow_path",
+                "children": [{
+                    "type": "TextSubheading",
+                    "text": "Tafadhari chagua boti ambalo ungependa kusafiri nalo:-"
+                }, {
+                    "type": "Dropdown",
+                    "label": "Boti la kusafiria",
+                    "required": true,
+                    "name": "boti_la_kusafiria",
+                    "data-source": [{
+                        "id": "sea_star_01",
+                        "title": "Sea Star 01"
+                    }, {
+                        "id": "zanzibar_01",
+                        "title": "Zanzibar 01"
+                    }, {
+                        "id": "zanzibar_02",
+                        "title": "Zanzibar 02"
+                    }]
+                }, {
+                    "type": "Footer",
+                    "label": "Maliza na Tuma",
+                    "on-click-action": {
+                        "name": "complete",
+                        "payload": {
+                            "jina_la_kwanza": "${screen.BINAFSI.jina_la_kwanza}",
+                            "jina_la_kati": "${screen.BINAFSI.jina_la_kati}",
+                            "jina_la_mwisho": "${screen.BINAFSI.jina_la_mwisho}",
+                            "jinsia": "${screen.BINAFSI.jinsia}",
+                            "namba_ya_simu": "${screen.MAWASILIANO.namba_ya_simu}",
+                            "uraia": "${screen.MAWASILIANO.uraia}",
+                            "nchi": "${screen.MAWASILIANO.nchi}",
+                            "mkoa": "${screen.MAWASILIANO.mkoa}",
+                            "kutoka": "${screen.USAFIRI.kutoka}",
+                            "kwenda": "${screen.USAFIRI.kwenda}",
+                            "tarehe_ya_safari": "${screen.USAFIRI.tarehe_ya_safari}",
+                            "idadi_ya_wasafiri": "${screen.USAFIRI.idadi_ya_wasafiri}",
+                            "boti_la_kusafiria": "${form.boti_la_kusafiria}"
+                        }
+                    }
+                }]
+            }]
+        }
+    }]
+}

@@ -74,6 +74,12 @@ class FlowData(SQLModel, table=True):
             data = session.exec(select(cls)).first()
             return data
 
+    @classmethod
+    def by_flow_id(cls, flow_id: str):
+        with Session(engine) as session:
+            data = session.exec(select(cls).where(cls.flow_id == flow_id)).first()
+            return data
+
 
 # Create the tables
 SQLModel.metadata.create_all(engine)
