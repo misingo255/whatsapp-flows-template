@@ -76,4 +76,4 @@ After publishing, conduct a final round of testing to ensure everything is funct
 
 ---
 
-For additional details on each step, refer to the official [Meta Developers Documentation](https://developers.facebook.com/docs/whatsapp) and the [Meta Business Help Center](https://www.facebook.com/business/help).
+For additional details on each step, refer to the official [Whatsapp Flows Documentation](https://developers.facebook.com/docs/whatsapp/flows/gettingstarted) or [Meta Developers Documentation](https://developers.facebook.com/docs/whatsapp) and the [Meta Business Help Center](https://www.facebook.com/business/help).
