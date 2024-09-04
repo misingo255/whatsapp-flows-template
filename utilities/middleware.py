@@ -11,6 +11,7 @@ WHATSAPP_BUSINESS_PHONE_NUMBER_ID = os.getenv("WHATSAPP_BUSINESS_PHONE_NUMBER_ID
 WHATSAPP_BUSINESS_ACCESS_TOKEN = os.getenv("WHATSAPP_BUSINESS_ACCESS_TOKEN", "")
 WHATSAPP_BUSINESS_ACCOUNT_ID = os.getenv("WHATSAPP_BUSINESS_ACCOUNT_ID", "")
 
+
 class WhatsappFlowsMiddleware:
     auth_header = {"Authorization": f"Bearer {WHATSAPP_BUSINESS_ACCESS_TOKEN}"}
     messaging_headers = {
