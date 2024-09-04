@@ -1,0 +1,282 @@
+{
+    "version": "3.1",
+    "screens": [{
+        "id": "BINAFSI",
+        "title": "Binafsi",
+        "data": {},
+        "layout": {
+            "type": "SingleColumnLayout",
+            "children": [{
+                "type": "Form",
+                "name": "flow_path",
+                "children": [{
+                    "type": "Image",
+                    "src": "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",
+                    "height": 35,
+                    "scale-type": "contain"
+                }, {
+                    "type": "TextSubheading",
+                    "text": "Tafadhari ingiza taarifa zako binafsi:-"
+                }, {
+                    "type": "TextInput",
+                    "label": "Jina la kwanza",
+                    "name": "jina_la_kwanza",
+                    "required": true,
+                    "input-type": "text"
+                }, {
+                    "type": "TextInput",
+                    "label": "Jina la kati",
+                    "name": "jina_la_kati",
+                    "required": true,
+                    "input-type": "text"
+                }, {
+                    "type": "TextInput",
+                    "label": "Jina la mwisho",
+                    "name": "jina_la_mwisho",
+                    "required": true,
+                    "input-type": "text"
+                }, {
+                    "type": "Dropdown",
+                    "label": "Jinsia",
+                    "required": true,
+                    "name": "jinsia",
+                    "data-source": [{
+                        "id": "0_Mwanaume_(ME)",
+                        "title": "Mwanaume (ME)"
+                    }, {
+                        "id": "1_Mwanamke_(KE)",
+                        "title": "Mwanamke (KE)"
+                    }]
+                }, {
+                    "type": "Footer",
+                    "label": "Endelea",
+                    "on-click-action": {
+                        "name": "navigate",
+                        "next": {
+                            "type": "screen",
+                            "name": "MAWASILIANO"
+                        },
+                        "payload": {
+                            "jina_la_kwanza": "${form.jina_la_kwanza}",
+                            "jina_la_kati": "${form.jina_la_kati}",
+                            "jina_la_mwisho": "${form.jina_la_mwisho}",
+                            "jinsia": "${form.jinsia}"
+                        }
+                    }
+                }]
+            }]
+        }
+    }, {
+        "id": "MAWASILIANO",
+        "title": "Mawasiliano na Makazi",
+        "data": {},
+        "layout": {
+            "type": "SingleColumnLayout",
+            "children": [{
+                "type": "Form",
+                "name": "flow_path",
+                "children": [{
+                    "type": "Image",
+                    "src": "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",
+                    "height": 45,
+                    "scale-type": "contain"
+                }, {
+                    "type": "TextSubheading",
+                    "text": "Tafadhari andika taarifa zako za mawasiliano na makazi:-"
+                }, {
+                    "type": "TextInput",
+                    "label": "Namba ya simu",
+                    "name": "namba_ya_simu",
+                    "required": true,
+                    "input-type": "text"
+                }, {
+                    "type": "Dropdown",
+                    "label": "Uraia",
+                    "required": true,
+                    "name": "uraia",
+                    "data-source": [{
+                        "id": "mtanzania",
+                        "title": "Mtanzania"
+                    }, {
+                        "id": "mgeni",
+                        "title": "Mgeni"
+                    }]
+                }, {
+                    "type": "TextInput",
+                    "label": "Nchi",
+                    "name": "nchi",
+                    "required": true,
+                    "input-type": "text"
+                }, {
+                    "type": "TextInput",
+                    "label": "Mkoa",
+                    "name": "mkoa",
+                    "required": true,
+                    "input-type": "text"
+                }, {
+                    "type": "Footer",
+                    "label": "Done",
+                    "on-click-action": {
+                        "name": "navigate",
+                        "next": {
+                            "type": "screen",
+                            "name": "USAFIRI"
+                        },
+                        "payload": {
+                            "namba_ya_simu": "${form.namba_ya_simu}",
+                            "uraia": "${form.uraia}",
+                            "nchi": "${form.nchi}",
+                            "mkoa": "${form.mkoa}"
+                        }
+                    }
+                }]
+            }]
+        }
+    }, {
+        "id": "USAFIRI",
+        "title": "Usafiri",
+        "data": {},
+        "layout": {
+            "type": "SingleColumnLayout",
+            "children": [{
+                "type": "Form",
+                "name": "flow_path",
+                "children": [{
+                    "type": "Image",
+                    "src": "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",
+                    "height": 45,
+                    "scale-type": "contain"
+                }, {
+                    "type": "TextSubheading",
+                    "text": "Tafadhari chagua taarifa zako za usafiri:-"
+                }, {
+                    "type": "Dropdown",
+                    "label": "Kutoka",
+                    "required": true,
+                    "name": "kutoka",
+                    "data-source": [{
+                        "id": "DAR",
+                        "title": "Dar es salaam (DAR)"
+                    }, {
+                        "id": "MKO",
+                        "title": "Mkoani (MKO)"
+                    }, {
+                        "id": "TAN",
+                        "title": "Tanga (TAN)"
+                    }, {
+                        "id": "WET",
+                        "title": "Wete (WET)"
+                    }, {
+                        "id": "ZNZ",
+                        "title": "Zanzibar (ZNZ)"
+                    }]
+                }, {
+                    "type": "Dropdown",
+                    "label": "Kwenda",
+                    "required": true,
+                    "name": "kwenda",
+                    "data-source": [{
+                        "id": "DAR",
+                        "title": "Dar es salaam (DAR)"
+                    }, {
+                        "id": "MKO",
+                        "title": "Mkoani (MKO)"
+                    }, {
+                        "id": "TAN",
+                        "title": "Tanga (TAN)"
+                    }, {
+                        "id": "WET",
+                        "title": "Wete (WET)"
+                    }, {
+                        "id": "ZNZ",
+                        "title": "Zanzibar (ZNZ)"
+                    }]
+                }, {
+                    "type": "DatePicker",
+                    "label": "Tarehe ya safari",
+                    "required": true,
+                    "name": "tarehe_ya_safari"
+                }, {
+                    "type": "TextInput",
+                    "label": "Idadi ya wasafiri",
+                    "name": "idadi_ya_wasafiri",
+                    "required": true,
+                    "input-type": "number"
+                }, {
+                    "type": "Footer",
+                    "label": "Endelea",
+                    "on-click-action": {
+                        "name": "navigate",
+                        "next": {
+                            "type": "screen",
+                            "name": "BOTI"
+                        },
+                        "payload": {
+                            "kutoka": "${form.kutoka}",
+                            "kwenda": "${form.kwenda}",
+                            "tarehe_ya_safari": "${form.tarehe_ya_safari}",
+                            "idadi_ya_wasafiri": "${form.idadi_ya_wasafiri}"
+                        }
+                    }
+                }]
+            }]
+        }
+    }, {
+        "id": "BOTI",
+        "title": "Boti",
+        "data": {},
+        "terminal": true,
+        "layout": {
+            "type": "SingleColumnLayout",
+            "children": [{
+                "type": "Form",
+                "name": "flow_path",
+                "children": [{
+                    "type": "Image",
+                    "src": "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",
+                    "height": 45,
+                    "scale-type": "contain"
+                }, {
+                    "type": "TextSubheading",
+                    "text": "Tafadhari chagua boti ambalo ungependa kusafiri nalo:-"
+                }, {
+                    "type": "Dropdown",
+                    "label": "Boti la kusafiria",
+                    "required": true,
+                    "name": "boti_la_kusafiria",
+                    "data-source": [{
+                        "id": "sea_star_01",
+                        "title": "Sea Star 01"
+                    }, {
+                        "id": "zanzibar_01",
+                        "title": "Zanzibar 01"
+                    }, {
+                        "id": "zanzibar_02",
+                        "title": "Zanzibar 02"
+                    }]
+                }, {
+                    "type": "Footer",
+                    "label": "Maliza na Tuma",
+                    "on-click-action": {
+                        "name": "complete",
+                        "payload": {
+                            "jina_la_kwanza": "${form.jina_la_kwanza}",
+                            "jina_la_kati": "${form.jina_la_kati}",
+                            "jina_la_mwisho": "${form.jina_la_mwisho}",
+                            "jinsia": "${form.jinsia}",
+                            "namba_ya_simu": "${form.namba_ya_simu}",
+                            "uraia": "${form.uraia}",
+                            "nchi": "${form.nchi}",
+                            "mkoa": "${form.mkoa}",
+                            "kutoka": "${form.kutoka}",
+                            "kwenda": "${form.kwenda}",
+                            "tarehe_ya_safari": "${form.tarehe_ya_safari}",
+                            "idadi_ya_wasafiri": "${form.idadi_ya_wasafiri}",
+                            "screen_3_Dropdown_0": "${form.boti_la_kusafiria}"
+                        }
+                    }
+                }]
+            }]
+        }
+    }]
+}
