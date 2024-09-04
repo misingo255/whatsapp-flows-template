@@ -3,6 +3,7 @@ from fastapi.responses import JSONResponse
 from utilities.middleware import WhatsappFlowsMiddleware
 from database.models import FlowData
 from database.schemas import FlowDataSchema
+from utilities.validation import FlowValidations
 
 
 flows_router = APIRouter()
@@ -41,13 +42,18 @@ async def upload_flow_json(flow_id: str, file: UploadFile = File(...)):
         return JSONResponse(
             content="FLOW ALREADY UPLOADED", status_code=status.HTTP_400_BAD_REQUEST
         )
+    is_json = FlowValidations.is_json_file(file)
+    if not is_json:
+        return JSONResponse(
+            content="INVALID FILE TYPE, PLEASE UPLOAD A JSON FILE",
+            status_code=status.HTTP_400_BAD_REQUEST,
+        )
     response = WhatsappFlowsMiddleware.upload_flow_json(flow_id, file)
     if not response:
         return JSONResponse(
             content="FLOW UPLOAD FAILED, VERIFY YOUR FLOW ID OR FILE",
             status_code=status.HTTP_400_BAD_REQUEST,
         )
-
     flow.is_uploaded = True
     flow.save()
 
