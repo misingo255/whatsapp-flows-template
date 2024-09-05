@@ -18,7 +18,7 @@ class WhatsappFlowsMiddleware:
         "Content-Type": "application/json",
         "Authorization": f"Bearer {WHATSAPP_BUSINESS_ACCESS_TOKEN}",
     }
-    base_url = "https://graph.facebook.com/v18.0"
+    base_url = "https://graph.facebook.com/v20.0"
 
     @classmethod
     def create_flow(cls, flow_name: str):
